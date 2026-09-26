@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://buaq673iyr04d"]
+
+[ext_resource type="PackedScene" uid="uid://coattrekefhqx" path="res://coach/entity.tscn" id="1_i4ju6"]
+[ext_resource type="Texture2D" uid="uid://bmv1t6gbq5m0u" path="res://gym/raw assets/floor.png" id="2_q3c0j"]
+[ext_resource type="PackedScene" uid="uid://buv1a38oksyvi" path="res://gym/locker.tscn" id="3_q3c0j"]
+[ext_resource type="PackedScene" uid="uid://dn5frmdev2m7a" path="res://gym/punching_bag.tscn" id="4_v3cg3"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jaclh"]
+sky_top_color = Color(0.49803922, 0.5294118, 0.5647059, 1)
+sky_horizon_color = Color(0.7607843, 0.72156864, 0.6509804, 1)
+ground_bottom_color = Color(0.20392157, 0.1882353, 0.17254902, 1)
+ground_horizon_color = Color(0.44313726, 0.40392157, 0.3647059, 1)
+
+[sub_resource type="Sky" id="Sky_gk1jr"]
+sky_material = SubResource("ProceduralSkyMaterial_jaclh")
+
+[sub_resource type="Environment" id="Environment_rgj0q"]
+background_mode = 2
+sky = SubResource("Sky_gk1jr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gk1jr"]
+albedo_texture = ExtResource("2_q3c0j")
+uv1_scale = Vector3(20, 20, 20)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n5wjn"]
+size = Vector3(20, 0.164, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_v3cg3"]
+size = Vector2(20, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_81xce"]
+size = Vector3(20, 10, 0.1)
+
+[node name="gym" type="Node3D" unique_id=1221769369]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2126029849]
+environment = SubResource("Environment_rgj0q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1670793090]
+transform = Transform3D(0.3839891, -0.7426721, -0.5486261, -0.34600782, -0.6666197, 0.6602248, -0.85605544, -0.06369019, -0.51294506, -16.263424, 8.793612, 0)
+light_color = Color(1, 0.94509804, 0.8392157, 1)
+light_energy = 0.485
+light_angular_distance = 5.0
+shadow_enabled = true
+
+[node name="coach" parent="." unique_id=55651412 instance=ExtResource("1_i4ju6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05254197, 0, -0.058704734)
+
+[node name="props" type="Node3D" parent="." unique_id=1514011782]
+
+[node name="locker" parent="props" unique_id=65761864 instance=ExtResource("3_q3c0j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.158314, 0.0061951876, -7.784972)
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=572724317]
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1172045693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014931202, 0.010900021, 0.003862381)
+material_override = SubResource("StandardMaterial3D_gk1jr")
+mesh = SubResource("PlaneMesh_7dm0k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1041654486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08222869, 0)
+shape = SubResource("BoxShape3D_n5wjn")
+metadata/_edit_lock_ = true
+
+[node name="punchingBag" parent="." unique_id=1046831684 instance=ExtResource("4_v3cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143468, 0.48617387, -2.5659904)
+
+[node name="wallLeft" type="StaticBody3D" parent="." unique_id=1733043094]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.007, 2.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wallLeft" unique_id=732175875]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, 0)
+mesh = SubResource("QuadMesh_v3cg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallLeft" unique_id=200911667]
+shape = SubResource("BoxShape3D_81xce")
+
+[node name="wallTop" type="StaticBody3D" parent="." unique_id=1248460693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wallTop" unique_id=1661999259]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 0, 0, 0)
+mesh = SubResource("QuadMesh_v3cg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wallTop" unique_id=501828483]
+shape = SubResource("BoxShape3D_81xce")

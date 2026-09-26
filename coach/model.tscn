@@ -7,7 +7,6 @@
 diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("2_6y5xn")
-ao_enabled = true
 
 [node name="model" unique_id=329851813 instance=ExtResource("1_petlp")]
 

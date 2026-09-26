@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://buv1a38oksyvi"]
+
+[ext_resource type="PackedScene" uid="uid://c2qdhpc7liv8x" path="res://gym/raw assets/locker.glb" id="1_dkctt"]
+[ext_resource type="Texture2D" uid="uid://b8tylv4uptnuh" path="res://gym/raw assets/locker.png" id="2_qcv1y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkctt"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_qcv1y")
+
+[node name="locker" unique_id=65761864 instance=ExtResource("1_dkctt")]
+
+[node name="Locker (applied)" parent="." index="0" unique_id=415448396]
+transform = Transform3D(0.43548885, 0, 0, 0, 0.43548885, 0, 0, 0, 0.43548885, 0.3062717, 1.1948771, -0.011261463)
+material_override = SubResource("StandardMaterial3D_dkctt")

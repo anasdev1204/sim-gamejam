@@ -18,7 +18,8 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 folder_colors={
 "res://coach/raw assets/": "red",
-"res://global/": "green"
+"res://global/": "green",
+"res://gym/raw assets/": "red"
 }
 
 [physics]

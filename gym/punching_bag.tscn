@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dn5frmdev2m7a"]
+
+[ext_resource type="PackedScene" uid="uid://doo4pu4ypsfel" path="res://gym/raw assets/punchingBag.glb" id="1_xlycn"]
+[ext_resource type="Texture2D" uid="uid://e2omv0aq3ypv" path="res://gym/raw assets/punchingBag.png" id="2_emsb8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_827m8"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_emsb8")
+
+[node name="punchingBag" unique_id=1046831684 instance=ExtResource("1_xlycn")]
+
+[node name="Punching Bag" parent="." index="0" unique_id=282593791]
+transform = Transform3D(0.7608729, 0, 0, 0, 0.7608729, 0, 0, 0, 0.7608729, -0.0036933422, 1.4216809, -0.05302024)
+material_override = SubResource("StandardMaterial3D_827m8")
