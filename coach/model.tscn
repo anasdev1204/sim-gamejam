@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dhc81uyjn7ncc"]
+
+[ext_resource type="PackedScene" uid="uid://cgum8k5syber7" path="res://coach/raw assets/coach.glb" id="1_petlp"]
+[ext_resource type="Texture2D" uid="uid://b0uocard74gxr" path="res://coach/raw assets/coach_coach Color.webp" id="2_6y5xn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y5xn"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_6y5xn")
+ao_enabled = true
+
+[node name="model" unique_id=329851813 instance=ExtResource("1_petlp")]
+
+[node name="coach" parent="." index="0" unique_id=1094458452]
+material_override = SubResource("StandardMaterial3D_6y5xn")

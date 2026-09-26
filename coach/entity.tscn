@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://coattrekefhqx"]
+
+[ext_resource type="PackedScene" uid="uid://dhc81uyjn7ncc" path="res://coach/model.tscn" id="1_i7lij"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ycuou"]
+radius = 0.28759766
+height = 2.0312042
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=55651412]
+
+[node name="model" parent="." unique_id=1856260379 instance=ExtResource("1_i7lij")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1101118056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0145789, 0)
+shape = SubResource("CapsuleShape3D_ycuou")
+
+[node name="cameraPivot" type="Node3D" parent="." unique_id=1326662165]
+transform = Transform3D(0.70710677, 0.35355338, 0.6123724, 0, 0.8660254, -0.5, -0.70710677, 0.35355338, 0.6123724, 0, 1.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="cameraPivot" unique_id=1244669480]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -10)
+projection = 1
+size = 6.597
