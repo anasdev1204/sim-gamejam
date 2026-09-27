@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c050at6ayoofp"]
+
+[ext_resource type="PackedScene" uid="uid://b41175qxk0jky" path="res://gym/raw assets/ring.glb" id="1_tu63g"]
+[ext_resource type="Texture2D" uid="uid://c0iqb2o35ignb" path="res://gym/raw assets/ring.png" id="2_stmda"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sryly"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_stmda")
+
+[node name="ring" unique_id=306579401 instance=ExtResource("1_tu63g")]
+
+[node name="Ring" parent="." index="0" unique_id=944063017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.054016113, 0.97935414, -0.057922363)
+material_override = SubResource("StandardMaterial3D_sryly")

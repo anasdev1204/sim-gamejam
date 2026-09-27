@@ -3,20 +3,22 @@
 [ext_resource type="PackedScene" uid="uid://coattrekefhqx" path="res://coach/entity.tscn" id="1_i4ju6"]
 [ext_resource type="Texture2D" uid="uid://bmv1t6gbq5m0u" path="res://gym/raw assets/floor.png" id="2_q3c0j"]
 [ext_resource type="PackedScene" uid="uid://buv1a38oksyvi" path="res://gym/locker.tscn" id="3_q3c0j"]
+[ext_resource type="PackedScene" uid="uid://c050at6ayoofp" path="res://gym/ring.tscn" id="4_81xce"]
 [ext_resource type="PackedScene" uid="uid://dn5frmdev2m7a" path="res://gym/punching_bag.tscn" id="4_v3cg3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jaclh"]
-sky_top_color = Color(0.49803922, 0.5294118, 0.5647059, 1)
-sky_horizon_color = Color(0.7607843, 0.72156864, 0.6509804, 1)
-ground_bottom_color = Color(0.20392157, 0.1882353, 0.17254902, 1)
-ground_horizon_color = Color(0.44313726, 0.40392157, 0.3647059, 1)
+sky_top_color = Color(0.39675936, 0.55477715, 0.60288537, 1)
+sky_horizon_color = Color(0.7255, 0.7310968, 0.68698007, 1)
+ground_bottom_color = Color(0.2348136, 0.15092513, 0.2806208, 1)
+ground_horizon_color = Color(0.45735008, 0.40607312, 0.2881882, 1)
 
 [sub_resource type="Sky" id="Sky_gk1jr"]
 sky_material = SubResource("ProceduralSkyMaterial_jaclh")
 
 [sub_resource type="Environment" id="Environment_rgj0q"]
-background_mode = 2
+background_mode = 1
 sky = SubResource("Sky_gk1jr")
+ambient_light_source = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gk1jr"]
 albedo_texture = ExtResource("2_q3c0j")
@@ -49,10 +51,29 @@ shadow_enabled = true
 [node name="coach" parent="." unique_id=55651412 instance=ExtResource("1_i4ju6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05254197, 0, -0.058704734)
 
+[node name="lights" type="Node3D" parent="." unique_id=386417404]
+
 [node name="props" type="Node3D" parent="." unique_id=1514011782]
 
 [node name="locker" parent="props" unique_id=65761864 instance=ExtResource("3_q3c0j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.158314, 0.0061951876, -7.784972)
+
+[node name="ring" parent="props" unique_id=1578816242 instance=ExtResource("4_81xce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8390107, 0, 5.2189264)
+
+[node name="punchingBags" type="Node3D" parent="props" unique_id=536448924]
+
+[node name="punchingBag" parent="props/punchingBags" unique_id=1046831684 instance=ExtResource("4_v3cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143, 0.486, -2.5)
+
+[node name="punchingBag2" parent="props/punchingBags" unique_id=655953998 instance=ExtResource("4_v3cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143, 0.486, -0.5)
+
+[node name="punchingBag3" parent="props/punchingBags" unique_id=525787219 instance=ExtResource("4_v3cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143, 0.486, 1.5)
+
+[node name="punchingBag4" parent="props/punchingBags" unique_id=1319364935 instance=ExtResource("4_v3cg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143, 0.486, 3.5)
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=572724317]
 metadata/_edit_lock_ = true
@@ -66,9 +87,6 @@ mesh = SubResource("PlaneMesh_7dm0k")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08222869, 0)
 shape = SubResource("BoxShape3D_n5wjn")
 metadata/_edit_lock_ = true
-
-[node name="punchingBag" parent="." unique_id=1046831684 instance=ExtResource("4_v3cg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.143468, 0.48617387, -2.5659904)
 
 [node name="wallLeft" type="StaticBody3D" parent="." unique_id=1733043094]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.007, 2.5, 0)
